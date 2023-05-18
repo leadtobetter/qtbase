@@ -5523,6 +5523,9 @@ if [ "$CFG_XINPUT2" != "no" ]; then
             QMAKE_LIBXI_VERSION_MAJOR=`$PKG_CONFIG --modversion xi 2>/dev/null | cut -d . -f 1`
             QMAKE_LIBXI_VERSION_MINOR=`$PKG_CONFIG --modversion xi 2>/dev/null | cut -d . -f 2`
             QMAKE_LIBXI_VERSION_PATCH=`$PKG_CONFIG --modversion xi 2>/dev/null | cut -d . -f 3`
+            if ["$QMAKE_LIBXI_VERSION_PATCH" = ""]; then
+                QMAKE_LIBXI_VERSION_PATCH=0
+            fi
             QMakeVar set QMAKE_LIBXI_VERSION_MAJOR "$QMAKE_LIBXI_VERSION_MAJOR"
             QMakeVar set QMAKE_LIBXI_VERSION_MINOR "$QMAKE_LIBXI_VERSION_MINOR"
             QMakeVar set QMAKE_LIBXI_VERSION_PATCH "$QMAKE_LIBXI_VERSION_PATCH"
