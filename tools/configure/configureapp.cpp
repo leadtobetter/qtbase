@@ -1459,7 +1459,9 @@ void Configure::parseCmdLine()
             dictionary[ "QMAKESPEC" ].endsWith("-msvc2012") ||
             dictionary[ "QMAKESPEC" ].endsWith("-msvc2013") ||
             dictionary[ "QMAKESPEC" ].endsWith("-msvc2015") ||
-            dictionary[ "QMAKESPEC" ].endsWith("-msvc2017")) {
+            dictionary[ "QMAKESPEC" ].endsWith("-msvc2017") ||
+            dictionary[ "QMAKESPEC" ].endsWith("-msvc2019") ||
+            dictionary[ "QMAKESPEC" ].endsWith("-msvc2022")) {
             if (dictionary[ "MAKE" ].isEmpty()) dictionary[ "MAKE" ] = "nmake";
             dictionary[ "QMAKEMAKEFILE" ] = "Makefile.win32";
         } else if (dictionary[ "QMAKESPEC" ] == QString("win32-g++")) {
